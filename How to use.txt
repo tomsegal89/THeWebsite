@@ -1,0 +1,31 @@
+********** regarding THeWebsite folder **********
+
+note that the THeWebsite folder stored here is just a backup and not the actual files which are in use.
+	These are on the tritium server.
+
+********** Updating THeWebsite **********
+
+1. make sure WAMP is on. Specifically, run it by using the following path:
+	C:\wamp\bin\apache\apache2.4.23\bin\httpd.exe
+	otherwise THeWebsite won't be able to access the tritium drive because the following
+	line won't work: $fileNames = scandir('Z://');
+2. test your changes using the monitor pc --> C:\wamp\www\THeWebsite --> http://localhost/THeWebsite/
+3. move the THeWebsite folder from C:\wamp\www\THeWebsite to someplace else, say tritium\PyEnvDAQ\THeWebsite
+4. in constants.php, uncomment line 19 and comment line 20. This changes GLOBALS['envFilesDirectoryPath'] to suit the online version.
+5. login to the server with PUTTY:
+	server: tritium-vserver.mpi-hd.mpg.de server
+	user: usual group username
+	password: strong group password (not the one that usually goes with that user name)
+	cd public_html	
+6. remove the old files using: rm -R THeWebsite
+7. copy over the new files using: cp -R ../tritium/PyEnvDAQ/THeWebsite THeWebsite
+8. chmod 755 -R THeWebsite (not sure about the 755)
+
+* if you skipped 4, you can also do it now by typing nano public_html/THeWebsite/constants.php. Use ctrl+x to exit and y to save changes.	
+
+********** general **********
+
+need to debug? to make the server display errors, use:
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);

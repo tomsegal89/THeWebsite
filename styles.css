@@ -1,0 +1,32 @@
+<style>
+	body {
+		text-color: lightgray;
+		color: lightgray; 
+	}
+	a {
+		color: lightgray;
+	}
+	p {
+		color: lightgray;
+	}
+	h1 {
+		color: #cc3333;
+	}
+	h2 {
+		color: #cc3333;
+	}
+	error {
+		color: red;
+	}
+	label {
+	  
+	  text-align:left;
+	  display: block;
+	}
+	div {
+		position: absolute;
+	}
+	table {
+		color: lightgray;
+	}
+</style>
